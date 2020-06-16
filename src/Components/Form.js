@@ -1,22 +1,35 @@
 import React, { useState } from 'react'
 
-export default function Form(props) {
+export default function Form({ addTeamMember }) {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         role: ''
     })
 
+    const resetForm = () => {
+        setFormData({
+            name: '',
+            email: '',
+            role: ''
+        })
+    }
+
     const onChange = e => {
-        e.preventDefault()
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         })
     }
+
+    const onSubmit = e => {
+        e.preventDefault()
+        addTeamMember(formData)
+        resetForm()
+    }
     
     return (
-        <form>
+        <form onSubmit={onSubmit}>
             <label>
                 Name: 
                 <input name='name' type='text' value={formData.name} onChange={onChange} />

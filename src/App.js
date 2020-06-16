@@ -9,10 +9,14 @@ function App() {
     email: 'carneson39@gmail.com',
     role: 'Front End Developer'
   }])
+
+  const addTeamMember = newMember => {
+    setTeamList([...teamList, newMember])
+  }
   
   return (
     <div className="App">
-      <Form />
+      <Form addTeamMember={addTeamMember}/>
       <TeamMembers teamList={teamList}/>
     </div>
   );
