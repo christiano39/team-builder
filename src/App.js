@@ -44,6 +44,8 @@ function App() {
     if (!name || !email || !role) {
       setError('All fields are required')
       return
+    }else{
+      setError('')
     }
 
     const newMember = {...formData, id: uuid()}
@@ -65,7 +67,7 @@ function App() {
     const newTeamList = teamMembers.filter(person => person.id !== member.id)
     setTeamMembers([...newTeamList])
   }
-  
+
   return (
     <div className='container'>
       <header><h1>Team Members</h1></header>
