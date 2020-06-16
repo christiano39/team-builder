@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function MemberForm(props) {
-    const { formData, onInputChange, onSubmit } = props
+    const { formData, memberToEdit, populateForm, onInputChange, onSubmit, removeTeamMember } = props
+    
+    useEffect(() => {
+        if (memberToEdit){
+            populateForm(memberToEdit)
+            removeTeamMember(memberToEdit)
+        }
+    }, [memberToEdit])
 
     return (
         <form className='form-container' onSubmit={onSubmit}>
