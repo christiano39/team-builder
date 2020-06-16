@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.error {
+  color: red;
+}
+
+.team-member-container {
+  background-color: aliceblue;
+  width: 600px;
+  box-shadow: 3px 3px 5px 2px rgba(0,0,0,0.75);
+  margin: 20px auto;
+  padding: 20px 0;
+}
+
+form label,input,select {
+  margin: 10px 0;
+}
+
+
